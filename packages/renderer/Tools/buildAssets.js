@@ -7,7 +7,7 @@ function dirname(path) {
 	return s.join('/');
 }
 
-const rootDir = dirname(__dirname);
+const rootDir = dirname(dirname(dirname(__dirname)));
 const assetsDir = `${rootDir}/assets`;
 
 async function copyFile(source, dest) {
@@ -46,10 +46,10 @@ async function main() {
 	await copyFile(`${rootDir}/node_modules/highlight.js/styles/atom-one-dark-reasonable.css`, 'highlight.js/atom-one-dark-reasonable.css');
 
 	await copyFile(`${rootDir}/node_modules/mermaid/dist/mermaid.min.js`, 'mermaid/mermaid.min.js');
-	await copyFile(`${rootDir}/MdToHtml/rules/mermaid_render.js`, 'mermaid/mermaid_render.js');
+	await copyFile(`${rootDir}/packages/renderer/MdToHtml/rules/mermaid_render.js`, 'mermaid/mermaid_render.js');
 
 	await copyFile(`${rootDir}/node_modules/abcjs/dist/abcjs-basic-min.js`, 'abc/abcjs-basic-min.js');
-	await copyFile(`${rootDir}/MdToHtml/rules/abc_render.js`, 'abc/abc_render.js');
+	await copyFile(`${rootDir}/packages/renderer/MdToHtml/rules/abc_render.js`, 'abc/abc_render.js');
 }
 
 main().catch((error) => {

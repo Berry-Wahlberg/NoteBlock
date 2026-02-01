@@ -206,7 +206,7 @@ export default class SqliteQueue implements BaseQueue {
 
 	public async stop() {
 		if (this.maintenanceIntervalRef) {
-			clearInterval(this.maintenanceIntervalRef);
+			clearInterval(this.maintenanceIntervalRef as any);
 		}
 		return this.sqlite.destroy();
 	}

@@ -31,7 +31,7 @@
   "build": {
     "appId": "net.cozic.joplin-desktop",
     "compression": "normal",
-    "productName": "Joplin",
+    "productName": "NoteBlock",
     "npmRebuild": false,
     "afterSign": "./tools/notarizeMacApp.js",
     "extraResources": [

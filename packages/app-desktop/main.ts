@@ -45,7 +45,7 @@ const altInstanceId = getFlagValueFromArgs(process.argv, '--alt-instance-id', ''
 // We initialize all these variables here because they are needed from the main process. They are
 // then passed to the renderer process via the bridge.
 const appId = `net.cozic.joplin${env === 'dev' ? 'dev' : ''}-desktop`;
-let appName = env === 'dev' ? 'joplindev' : 'joplin';
+let appName = env === 'dev' ? 'noteblockdev' : 'NoteBlock';
 if (appId.indexOf('-desktop') >= 0) appName += '-desktop';
 const { rootProfileDir } = determineBaseAppDirs(profileFromArgs, appName, altInstanceId);
 
