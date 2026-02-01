@@ -1285,7 +1285,7 @@ msgstr ""
 
 #: packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx:253
 #: packages/app-mobile/components/screens/ConfigScreen/ConfigScreen.tsx:483
-msgid "Connect to Joplin Cloud"
+msgid "Connect to Local Server"
 msgstr ""
 
 #: packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx:277
@@ -2821,7 +2821,7 @@ msgstr ""
 
 #: packages/app-desktop/gui/JoplinCloudConfigScreen.tsx:44
 #: packages/app-mobile/components/screens/ConfigScreen/JoplinCloudConfig.tsx:59
-msgid "Go to Joplin Cloud profile"
+msgid "Go to Local Server profile"
 msgstr ""
 
 #: packages/app-desktop/gui/NoteEditor/NoteBody/CodeMirror/v6/utils/localisation.ts:12
@@ -3259,12 +3259,12 @@ msgstr ""
 
 #: packages/app-mobile/components/SyncWizard/SyncWizard.tsx:118
 #: packages/lib/models/Setting.ts:1364 packages/lib/SyncTargetJoplinCloud.ts:31
-msgid "Joplin Cloud"
+msgid "Local Server"
 msgstr ""
 
 #: packages/app-desktop/gui/Root.tsx:164
 #: packages/app-mobile/components/screens/JoplinCloudLoginScreen.tsx:148
-msgid "Joplin Cloud Login"
+msgid "Local Server Login"
 msgstr ""
 
 #: packages/lib/services/plugins/PluginService.ts:533
@@ -3552,7 +3552,7 @@ msgid "Log in with your web browser"
 msgstr ""
 
 #: packages/app-desktop/gui/MainScreen.tsx:592
-msgid "Login to Joplin Cloud."
+msgid "Login to Local Server."
 msgstr ""
 
 #: packages/app-mobile/components/screens/dropbox-login.tsx:59
@@ -4795,7 +4795,7 @@ msgstr ""
 
 #: packages/app-cli/app/command-publish.ts:27
 #: packages/app-cli/app/command-unpublish.ts:24
-msgid "Publishes a note to Joplin Server or Joplin Cloud"
+msgid "Publishes a note to Joplin Server or Local Server"
 msgstr ""
 
 #: packages/app-mobile/components/CameraView/ScannedBarcodes.tsx:79
@@ -5537,7 +5537,7 @@ msgid "Sidebar"
 msgstr ""
 
 #: packages/app-desktop/gui/JoplinCloudSignUpCallToAction.tsx:15
-msgid "Sign up to Joplin Cloud"
+msgid "Sign up to Local Server"
 msgstr ""
 
 #: packages/app-desktop/gui/ResourceScreen.tsx:117
@@ -6349,7 +6349,7 @@ msgid ""
 msgstr ""
 
 #: packages/app-desktop/gui/NoteEditor/utils/contextMenu.ts:146
-msgid "This feature is only available on Joplin Cloud and Joplin Server."
+msgid "This feature is only available on Local Server and Joplin Server."
 msgstr ""
 
 #: packages/app-desktop/gui/NoteEditor/utils/contextMenu.ts:158
@@ -6481,7 +6481,7 @@ msgstr ""
 #: packages/app-mobile/components/screens/JoplinCloudLoginScreen.tsx:153
 #, fuzzy
 msgid ""
-"To allow Joplin to synchronise with Joplin Cloud, please login using this "
+"To allow Joplin to synchronise with Local Server, please login using this "
 "URL:"
 msgstr ""
 "To allow Joplin to synchronize with Dropbox, please follow the steps below:"
@@ -7153,7 +7153,7 @@ msgid ""
 msgstr ""
 
 #: packages/lib/services/joplinCloudUtils.ts:45
-msgid "You are logged in into Joplin Cloud, you can leave this screen now."
+msgid "You are logged in into Local Server, you can leave this screen now."
 msgstr ""
 
 #: packages/app-desktop/gui/SsoLoginScreen/SsoLoginScreen.tsx:24
@@ -7191,7 +7191,7 @@ msgstr ""
 
 #: packages/lib/services/joplinCloudUtils.ts:53
 msgid ""
-"You were unable to connect to Joplin Cloud. Please check your credentials "
+"You were unable to connect to Local Server. Please check your credentials "
 "and try again. Error:"
 msgstr ""
 
@@ -7210,7 +7210,7 @@ msgstr ""
 
 #: packages/app-desktop/gui/MainScreen.tsx:591
 #: packages/app-mobile/components/ScreenHeader/WarningBanner.tsx:55
-msgid "Your Joplin Cloud credentials are invalid, please login."
+msgid "Your Local Server credentials are invalid, please login."
 msgstr ""
 
 #: packages/app-desktop/gui/EncryptionConfigScreen/EncryptionConfigScreen.tsx:259

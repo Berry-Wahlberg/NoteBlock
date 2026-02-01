@@ -48,7 +48,7 @@ import { loadKeychainServiceAndSettings } from './services/SettingUtils';
 import MigrationService from './services/MigrationService';
 import ShareService from './services/share/ShareService';
 import handleSyncStartupOperation from './services/synchronizer/utils/handleSyncStartupOperation';
-import SyncTargetJoplinCloud from './SyncTargetJoplinCloud';
+import SyncTargetLocalServer from './SyncTargetLocalServer';
 import { setAutoFreeze } from 'immer';
 import { getEncryptionEnabled } from './services/synchronizer/syncInfoUtils';
 import { loadMasterKeysFromSettings, migrateMasterPassword, migratePpk } from './services/e2ee/utils';
@@ -720,7 +720,7 @@ export default class BaseApplication {
 		SyncTargetRegistry.addClass(SyncTargetAmazonS3);
 		SyncTargetRegistry.addClass(SyncTargetJoplinServer);
 		SyncTargetRegistry.addClass(SyncTargetJoplinServerSAML);
-		SyncTargetRegistry.addClass(SyncTargetJoplinCloud);
+		SyncTargetRegistry.addClass(SyncTargetLocalServer);
 
 		try {
 			await shim.fsDriver().remove(tempDir);
@@ -826,11 +826,11 @@ export default class BaseApplication {
 		setLocale(Setting.value('locale'));
 
 		if (Setting.value('env') === Env.Dev) {
-			// Setting.setValue('sync.10.path', 'https://api.joplincloud.com');
-			// Setting.setValue('sync.10.userContentPath', 'https://joplinusercontent.com');
-			Setting.setValue('sync.10.path', 'http://api.joplincloud.local:22300');
-			Setting.setValue('sync.10.userContentPath', 'http://joplinusercontent.local:22300');
-			Setting.setValue('sync.10.website', 'http://joplincloud.local:22300');
+			// Setting.setValue('sync.10.path', 'https://api.local server.com');
+			// Setting.setValue('sync.10.userContentPath', 'https://usercontent.local server.com');
+			Setting.setValue('sync.10.path', 'http://api.local server.local:22300');
+			Setting.setValue('sync.10.userContentPath', 'http://usercontent.local server.local:22300');
+			Setting.setValue('sync.10.website', 'http://local server.local:22300');
 		}
 
 		// For now always disable fuzzy search due to performance issues:

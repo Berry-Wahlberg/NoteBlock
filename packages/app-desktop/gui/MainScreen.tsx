@@ -588,8 +588,8 @@ class MainScreenComponent extends React.Component<Props, State> {
 			);
 		} else if (this.props.showInvalidJoplinCloudCredential) {
 			msg = this.renderNotificationMessage(
-				_('Your Joplin Cloud credentials are invalid, please login.'),
-				_('Login to Joplin Cloud.'),
+				_('Your Local Server credentials are invalid, please login.'),
+				_('Login to Local Server.'),
 				onViewJoplinCloudLoginScreen,
 				_('Disable synchronisation'),
 				onDisableSync,

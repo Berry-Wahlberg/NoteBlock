@@ -1324,8 +1324,8 @@ msgstr "衝突 (附件)"
 
 #: packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx:253
 #: packages/app-mobile/components/screens/ConfigScreen/ConfigScreen.tsx:483
-msgid "Connect to Joplin Cloud"
-msgstr "連結到Joplin Cloud"
+msgid "Connect to Local Server"
+msgstr "連結到本地伺服器"
 
 #: packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx:277
 #: packages/app-mobile/components/screens/ConfigScreen/ConfigScreen.tsx:485
@@ -2912,8 +2912,8 @@ msgstr ""
 
 #: packages/app-desktop/gui/JoplinCloudConfigScreen.tsx:44
 #: packages/app-mobile/components/screens/ConfigScreen/JoplinCloudConfig.tsx:59
-msgid "Go to Joplin Cloud profile"
-msgstr "前往Joplin Cloud profile"
+msgid "Go to Local Server profile"
+msgstr "前往本地伺服器設定"
 
 #: packages/app-desktop/gui/NoteEditor/NoteBody/CodeMirror/v6/utils/localisation.ts:12
 msgid "Go to line"
@@ -3356,13 +3356,13 @@ msgstr "Joplin 可以使用各種服務來同步您的筆記。從下面的列�
 
 #: packages/app-mobile/components/SyncWizard/SyncWizard.tsx:118
 #: packages/lib/models/Setting.ts:1364 packages/lib/SyncTargetJoplinCloud.ts:31
-msgid "Joplin Cloud"
-msgstr "Joplin Cloud"
+msgid "Local Server"
+msgstr "本地伺服器"
 
 #: packages/app-desktop/gui/Root.tsx:164
 #: packages/app-mobile/components/screens/JoplinCloudLoginScreen.tsx:148
-msgid "Joplin Cloud Login"
-msgstr "Joplin Cloud 登入"
+msgid "Local Server Login"
+msgstr "本地伺服器登入"
 
 #: packages/lib/services/plugins/PluginService.ts:533
 msgid "Joplin Desktop"
@@ -3656,8 +3656,8 @@ msgid "Log in with your web browser"
 msgstr "以 Dropbox 登入"
 
 #: packages/app-desktop/gui/MainScreen.tsx:592
-msgid "Login to Joplin Cloud."
-msgstr "登入Joplin Cloud."
+msgid "Login to Local Server."
+msgstr "登入本地伺服器."
 
 #: packages/app-mobile/components/screens/dropbox-login.tsx:59
 msgid "Login with Dropbox"
@@ -4958,7 +4958,7 @@ msgstr "發布記事"
 
 #: packages/app-cli/app/command-publish.ts:27
 #: packages/app-cli/app/command-unpublish.ts:24
-msgid "Publishes a note to Joplin Server or Joplin Cloud"
+msgid "Publishes a note to Joplin Server or Local Server"
 msgstr ""
 
 #: packages/app-mobile/components/CameraView/ScannedBarcodes.tsx:79
@@ -5732,9 +5732,8 @@ msgid "Sidebar"
 msgstr "側邊欄"
 
 #: packages/app-desktop/gui/JoplinCloudSignUpCallToAction.tsx:15
-#, fuzzy
-msgid "Sign up to Joplin Cloud"
-msgstr "登入Joplin Cloud."
+msgid "Sign up to Local Server"
+msgstr "登入本地伺服器."
 
 #: packages/app-desktop/gui/ResourceScreen.tsx:117
 msgid "Size"
@@ -6573,7 +6572,7 @@ msgid ""
 msgstr ""
 
 #: packages/app-desktop/gui/NoteEditor/utils/contextMenu.ts:146
-msgid "This feature is only available on Joplin Cloud and Joplin Server."
+msgid "This feature is only available on Local Server and Joplin Server."
 msgstr ""
 
 #: packages/app-desktop/gui/NoteEditor/utils/contextMenu.ts:158
@@ -6703,9 +6702,9 @@ msgstr "請按照以下步驟，設定 Joplin 與 Dropbox 同步所需的選項�
 #: packages/app-desktop/gui/JoplinCloudLoginScreen.tsx:86
 #: packages/app-mobile/components/screens/JoplinCloudLoginScreen.tsx:153
 msgid ""
-"To allow Joplin to synchronise with Joplin Cloud, please login using this "
+"To allow Joplin to synchronise with Local Server, please login using this "
 "URL:"
-msgstr "為了讓Joplin與Joplin Cloud進行同步，請使用以下網址登入："
+msgstr "為了讓Joplin與本地伺服器進行同步，請使用以下網址登入："
 
 #: packages/app-desktop/gui/SsoLoginScreen/SsoLoginScreen.tsx:36
 #: packages/app-mobile/components/screens/SsoLoginScreen.tsx:64
@@ -7413,8 +7412,8 @@ msgstr ""
 "您將附加大型圖片 (%dx%d pixels)，附加之前是否要把尺寸縮小為 %d pixels？"
 
 #: packages/lib/services/joplinCloudUtils.ts:45
-msgid "You are logged in into Joplin Cloud, you can leave this screen now."
-msgstr "您已經登入 Joplin Cloud，您可以離開這個畫面。"
+msgid "You are logged in into Local Server, you can leave this screen now."
+msgstr "您已經登入 本地伺服器，您可以離開這個畫面。"
 
 #: packages/app-desktop/gui/SsoLoginScreen/SsoLoginScreen.tsx:24
 #: packages/app-mobile/components/screens/SsoLoginScreen.tsx:48
@@ -7453,9 +7452,9 @@ msgstr ""
 
 #: packages/lib/services/joplinCloudUtils.ts:53
 msgid ""
-"You were unable to connect to Joplin Cloud. Please check your credentials "
+"You were unable to connect to Local Server. Please check your credentials "
 "and try again. Error:"
-msgstr "無法連線到 Joplin Cloud. 請檢查您的認證信息並再試一次。錯誤:"
+msgstr "無法連線到 本地伺服器. 請檢查您的認證信息並再試一次。錯誤:"
 
 #: packages/app-desktop/gui/JoplinCloudConfigScreen.tsx:55
 #: packages/app-mobile/components/screens/ConfigScreen/JoplinCloudConfig.tsx:70
@@ -7472,8 +7471,8 @@ msgstr "您的資料將被重新加密並再次同步。"
 
 #: packages/app-desktop/gui/MainScreen.tsx:591
 #: packages/app-mobile/components/ScreenHeader/WarningBanner.tsx:55
-msgid "Your Joplin Cloud credentials are invalid, please login."
-msgstr "你的 Joplin Cloud 憑證無效，請重新登入。"
+msgid "Your Local Server credentials are invalid, please login."
+msgstr "你的 本地伺服器 憑證無效，請重新登入。"
 
 #: packages/app-desktop/gui/EncryptionConfigScreen/EncryptionConfigScreen.tsx:259
 msgid "Your password is needed to decrypt some of your data."

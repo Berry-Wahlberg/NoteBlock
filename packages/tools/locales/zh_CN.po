@@ -1294,8 +1294,8 @@ msgstr "冲突（附件）"
 
 #: packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx:253
 #: packages/app-mobile/components/screens/ConfigScreen/ConfigScreen.tsx:483
-msgid "Connect to Joplin Cloud"
-msgstr "连接至 Joplin 云"
+msgid "Connect to Local Server"
+msgstr "连接至本地服务器"
 
 #: packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx:277
 #: packages/app-mobile/components/screens/ConfigScreen/ConfigScreen.tsx:485

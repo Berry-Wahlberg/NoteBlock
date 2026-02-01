@@ -10,7 +10,7 @@ import useElementSize from '@joplin/lib/hooks/useElementSize';
 import Button, { ButtonLevel } from '../Button/Button';
 import bridge from '../../services/bridge';
 import Setting from '@joplin/lib/models/Setting';
-import JoplinCloudSignUpCallToAction from '../JoplinCloudSignUpCallToAction';
+import LocalServerSignUpCallToAction from '../LocalServerSignUpCallToAction';
 
 interface Props {
 	themeId: number;
@@ -123,7 +123,7 @@ const SlowSyncWarning = styled.div`
 `;
 
 const syncTargetNames: string[] = [
-	'joplinCloud',
+	'localServer',
 	'dropbox',
 	'onedrive',
 	'nextcloud',
@@ -136,14 +136,14 @@ const syncTargetNames: string[] = [
 
 const logosImageNames: Record<string, string> = {
 	'dropbox': 'SyncTarget_Dropbox.svg',
-	'joplinCloud': 'SyncTarget_JoplinCloud.svg',
+	'localServer': 'SyncTarget_LocalServer.svg',
 	'onedrive': 'SyncTarget_OneDrive.svg',
 };
 
-type SyncTargetInfoName = 'dropbox' | 'onedrive' | 'joplinCloud';
+type SyncTargetInfoName = 'dropbox' | 'onedrive' | 'localServer';
 
 export default function(props: Props) {
-	const joplinCloudDescriptionRef = useRef(null);
+	const localServerDescriptionRef = useRef(null);
 
 	const closeDialog = useCallback(() => {
 		props.dispatch({
@@ -156,7 +156,7 @@ export default function(props: Props) {
 		closeDialog();
 	}, [closeDialog]);
 
-	const { height: descriptionHeight } = useElementSize(joplinCloudDescriptionRef);
+	const { height: descriptionHeight } = useElementSize(localServerDescriptionRef);
 
 	function renderFeature(enabled: boolean, label: string) {
 		const className = enabled ? 'fas fa-check' : 'fas fa-times';
@@ -171,11 +171,13 @@ export default function(props: Props) {
 	function renderFeatures(name: string) {
 		return (
 			<FeatureList>
-				{[
-					renderFeature(true, _('Sync your notes')),
-					renderFeature(name === 'joplinCloud', _('Publish notes to the internet')),
-					renderFeature(name === 'joplinCloud', _('Collaborate on notebooks with others')),
-				]}
+				{
+					[
+						renderFeature(true, _('Sync your notes')),
+						renderFeature(name === 'localServer', _('Publish notes to the internet')),
+						renderFeature(name === 'localServer', _('Collaborate on notebooks with others')),
+					]
+				}
 			</FeatureList>
 		);
 	}
@@ -184,7 +186,7 @@ export default function(props: Props) {
 		const routes = {
 			'dropbox': { name: 'DropboxLogin', target: 7 },
 			'onedrive': { name: 'OneDriveLogin', target: 3 },
-			'joplinCloud': { name: 'JoplinCloudLogin', target: 10 },
+			'localServer': { name: 'LocalServerLogin', target: 10 },
 		};
 		const route = routes[name];
 		if (!route) return; // throw error??
@@ -213,13 +215,13 @@ export default function(props: Props) {
 	}
 
 	function renderSignUpArea(info: SyncTargetInfo) {
-		if (info.name !== 'joplinCloud') return null;
-		return <JoplinCloudSignUpCallToAction/>;
+		if (info.name !== 'localServer') return null;
+		return <LocalServerSignUpCallToAction/>;
 	}
 
 	function renderSyncTarget(info: SyncTargetInfo) {
 		const key = `syncTarget_${info.name}`;
-		const height = info.name !== 'joplinCloud' ? descriptionHeight : null;
+		const height = info.name !== 'localServer' ? descriptionHeight : null;
 
 		const logoImageName = logosImageNames[info.name];
 		const logoImageSrc = logoImageName ? `${bridge().buildDir()}/images/${logoImageName}` : '';
@@ -228,13 +230,13 @@ export default function(props: Props) {
 		const descriptionComp = (
 			<SyncTargetDescription
 				height={height}
-				ref={info.name === 'joplinCloud' ? joplinCloudDescriptionRef : null}
+				ref={info.name === 'localServer' ? localServerDescriptionRef : null}
 			>{info.description}</SyncTargetDescription>
 		);
 		const featuresComp = renderFeatures(info.name);
 
 		const renderSlowSyncWarning = () => {
-			if (info.name === 'joplinCloud') return null;
+			if (info.name === 'localServer') return null;
 			return <SlowSyncWarning>{`⚠️ ${_('%s is not optimised for synchronising many small files so your initial synchronisation will be slow.', info.label)}`}</SlowSyncWarning>;
 		};
 

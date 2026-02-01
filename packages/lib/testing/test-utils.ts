@@ -51,7 +51,7 @@ const DropboxApi = require('../DropboxApi');
 import JoplinServerApi, { Session } from '../JoplinServerApi';
 import { FolderEntity, ResourceEntity } from '../services/database/types';
 import { credentialFile, readCredentialFile } from '../utils/credentialFiles';
-import SyncTargetJoplinCloud from '../SyncTargetJoplinCloud';
+import SyncTargetLocalServer from '../SyncTargetLocalServer';
 import KeychainService from '../services/keychain/KeychainService';
 import { loadKeychainServiceAndSettings } from '../services/SettingUtils';
 import { setActiveMasterKeyId, setEncryptionEnabled } from '../services/synchronizer/syncInfoUtils';
@@ -134,7 +134,7 @@ SyncTargetRegistry.addClass(SyncTargetAmazonS3);
 SyncTargetRegistry.addClass(SyncTargetWebDAV);
 SyncTargetRegistry.addClass(SyncTargetJoplinServer);
 SyncTargetRegistry.addClass(SyncTargetJoplinServerSAML);
-SyncTargetRegistry.addClass(SyncTargetJoplinCloud);
+SyncTargetRegistry.addClass(SyncTargetLocalServer);
 
 let syncTargetName_ = '';
 let syncTargetId_: number = null;
@@ -151,7 +151,7 @@ function setSyncTargetName(name: string) {
 	syncTargetName_ = name;
 	syncTargetId_ = SyncTargetRegistry.nameToId(syncTargetName_);
 	sleepTime = syncTargetId_ === SyncTargetRegistry.nameToId('filesystem') ? 1001 : 100;// 400;
-	isNetworkSyncTarget_ = ['nextcloud', 'dropbox', 'onedrive', 'amazon_s3', 'joplinServer', 'joplinServerSaml', 'joplinCloud'].includes(syncTargetName_);
+	isNetworkSyncTarget_ = ['nextcloud', 'dropbox', 'onedrive', 'amazon_s3', 'joplinServer', 'joplinServerSaml', 'localServer'].includes(syncTargetName_);
 	synchronizers_ = [];
 	return previousName;
 }
@@ -163,7 +163,7 @@ setSyncTargetName('memory');
 // setSyncTargetName('onedrive');
 // setSyncTargetName('amazon_s3');
 // setSyncTargetName('joplinServer');
-// setSyncTargetName('joplinCloud');
+// setSyncTargetName('localServer');
 
 // console.info(`Testing with sync target: ${syncTargetName_}`);
 
@@ -686,7 +686,7 @@ async function initFileApi() {
 		if (!amazonS3Creds || !amazonS3Creds.credentials) throw new Error(`AWS auth JSON missing in ${amazonS3CredsPath} format should be: { "credentials": { "accessKeyId": "", "secretAccessKey": "", } "bucket": "mybucket", region: "", forcePathStyle: ""}`);
 		const api = new S3Client({ region: amazonS3Creds.region, credentials: amazonS3Creds.credentials, s3UseArnRegion: true, forcePathStyle: amazonS3Creds.forcePathStyle, endpoint: amazonS3Creds.endpoint });
 		fileApi = new FileApi('', new FileApiDriverAmazonS3(api, amazonS3Creds.bucket));
-	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('joplinServer') || syncTargetId_ === SyncTargetRegistry.nameToId('joplinCloud')) {
+	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('joplinServer') || syncTargetId_ === SyncTargetRegistry.nameToId('localServer')) {
 		mustRunInBand();
 
 		const joplinServerAuth = JSON.parse(await readCredentialFile('joplin-server-test-units-2.json'));

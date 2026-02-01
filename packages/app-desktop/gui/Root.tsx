@@ -23,7 +23,7 @@ import ResourceScreen from './ResourceScreen';
 import ProfileEditor from './ProfileEditor';
 import Navigator from './Navigator';
 import WelcomeUtils from '@joplin/lib/WelcomeUtils';
-import JoplinCloudLoginScreen from './JoplinCloudLoginScreen';
+import LocalServerLoginScreen from './LocalServerLoginScreen';
 import InteropService from '@joplin/lib/services/interop/InteropService';
 import WindowCommandsAndDialogs from './WindowCommandsAndDialogs/WindowCommandsAndDialogs';
 import { defaultWindowId, stateUtils, WindowState } from '@joplin/lib/reducer';
@@ -161,7 +161,7 @@ class RootComponent extends React.Component<Props, any> {
 			Main: { screen: MainScreen },
 			OneDriveLogin: { screen: OneDriveLoginScreen, title: () => _('OneDrive Login') },
 			DropboxLogin: { screen: DropboxLoginScreen, title: () => _('Dropbox Login') },
-			JoplinCloudLogin: { screen: JoplinCloudLoginScreen, title: () => _('Joplin Cloud Login') },
+			LocalServerLogin: { screen: LocalServerLoginScreen, title: () => _('Local Server Login') },
 			JoplinServerSamlLogin: { screen: SsoLoginScreen(new SamlShared()), title: () => _('Joplin Server Login') },
 			Import: { screen: ImportScreen, title: () => _('Import') },
 			Config: { screen: ConfigScreen, title: () => _('Options') },

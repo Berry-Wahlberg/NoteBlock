@@ -761,8 +761,8 @@
 	"Conflicts (attachments)": [
 		"冲突（附件）"
 	],
-	"Connect to Joplin Cloud": [
-		"连接至 Joplin 云"
+	"Connect to Local Server": [
+		"连接至本地服务器"
 	],
 	"Connect using your organisation account": [
 		"使用您的组织账户连接"
@@ -1985,11 +1985,11 @@
 	"Joplin can synchronise your notes using various providers. Select one from the list below.": [
 		"Joplin 可以使用多种途径来同步您的笔记。可以从下列选项中选择一种方式。"
 	],
-	"Joplin Cloud": [
-		"Joplin 云"
+	"Local Server": [
+		"本地服务器"
 	],
-	"Joplin Cloud Login": [
-		"Joplin 云登录"
+	"Local Server Login": [
+		"本地服务器登录"
 	],
 	"Joplin Desktop": [
 		"Joplin 桌面端"
@@ -2045,8 +2045,8 @@
 	"Joplin website": [
 		"Joplin 网站"
 	],
-	"Joplin's own sync service. Also gives access to Joplin-specific features such as publishing notes or collaborating on notebooks with others.": [
-		"Joplin 自己的同步服务。还可以访问 Joplin 的特定功能，比如发布笔记或者与他人协作笔记本。"
+	"Local sync service. Also gives access to NoteBlock-specific features such as publishing notes or collaborating on notebooks with others.": [
+		"本地同步服务。还可以访问 NoteBlock 的特定功能，比如发布笔记或者与他人协作笔记本。"
 	],
 	"Keep note history for": [
 		"保留笔记历史"

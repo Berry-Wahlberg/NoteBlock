@@ -208,6 +208,8 @@ packages/app-desktop/gui/KeymapConfig/styles/index.js
 packages/app-desktop/gui/KeymapConfig/utils/getLabel.js
 packages/app-desktop/gui/KeymapConfig/utils/useCommandStatus.js
 packages/app-desktop/gui/KeymapConfig/utils/useKeymap.js
+packages/app-desktop/gui/LocalServerLoginScreen.js
+packages/app-desktop/gui/LocalServerSignUpCallToAction.js
 packages/app-desktop/gui/MainScreen.js
 packages/app-desktop/gui/MasterPasswordDialog/Dialog.js
 packages/app-desktop/gui/MenuBar.js
@@ -1260,6 +1262,7 @@ packages/lib/SyncTargetFilesystem.js
 packages/lib/SyncTargetJoplinCloud.js
 packages/lib/SyncTargetJoplinServer.js
 packages/lib/SyncTargetJoplinServerSAML.js
+packages/lib/SyncTargetLocalServer.js
 packages/lib/SyncTargetNone.js
 packages/lib/SyncTargetOneDrive.js
 packages/lib/SyncTargetRegistry.js
