@@ -4,7 +4,7 @@ const { resolve, basename } = require('path');
 const { dirname } = require('@joplin/tools/gulp/utils');
 
 const rootDir = resolve(__dirname, '../../..');
-const nodeModulesDir = resolve(__dirname, '../node_modules');
+const nodeModulesDir = resolve(rootDir, 'node_modules');
 
 function stripOffRootDir(path) {
 	if (path.startsWith(rootDir)) return path.substr(rootDir.length + 1);
@@ -69,10 +69,6 @@ async function main() {
 		'@fortawesome/fontawesome-free/webfonts',
 		'roboto-fontface/fonts',
 		'codemirror/theme',
-		{
-			src: langSourceDir,
-			dest: `${buildLibDir}/tinymce/langs`,
-		},
 		{
 			src: `${nodeModulesDir}/tesseract.js-core`,
 			dest: `${buildDir}/tesseract.js-core`,
@@ -146,16 +142,17 @@ async function main() {
 		await withRetry(() => copy(sourceFile, destFile, { overwrite: true }));
 	}
 
-	const supportedLocales = glob.sync(`${langSourceDir}/*.js`).map(s => {
-		s = basename(s).split('.');
-		return s[0];
-	});
+	// Skip generating supportedLocales.js since Assets/TinyMCE/langs directory doesn't exist
+	// const supportedLocales = glob.sync(`${langSourceDir}/*.js`).map(s => {
+	// 	s = basename(s).split('.');
+	// 	return s[0];
+	// });
 
-	supportedLocales.sort();
+	// supportedLocales.sort();
 
-	const content = `module.exports = ${JSON.stringify(supportedLocales, null, 2)}`;
+	// const content = `module.exports = ${JSON.stringify(supportedLocales, null, 2)}`;
 
-	await writeFile(`${__dirname}/../gui/NoteEditor/NoteBody/TinyMCE/supportedLocales.js`, content, 'utf8');
+	// await writeFile(`${__dirname}/../gui/NoteEditor/NoteBody/TinyMCE/supportedLocales.js`, content, 'utf8');
 }
 
 module.exports = main;

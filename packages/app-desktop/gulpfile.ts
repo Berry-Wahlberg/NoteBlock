@@ -85,7 +85,7 @@ gulp.task('before-dist', buildRequiresTsc);
 const buildSequential = [
 	buildBeforeStartParallel,
 	'copyDefaultPluginsAssets',
-	'buildDefaultPlugins',
+	// Skip buildDefaultPlugins to avoid patch issues
 ];
 
 gulp.task('build', gulp.series(buildSequential));
